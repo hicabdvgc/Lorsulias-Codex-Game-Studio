@@ -464,6 +464,10 @@ project records. Preserve completed work while resolving the missing input.
 
 ## Contributing and license
 
+**AI contributor:** Codex (OpenAI) contributed to the studio's workflow, skills,
+templates, personas, documentation, and verification under the project author's
+direction.
+
 Use the repository's issue and pull-request templates to describe reproducible
 problems or proposed changes. Include the affected scope, relevant configuration
 and actual checks; keep private game content and credentials out of reports.
