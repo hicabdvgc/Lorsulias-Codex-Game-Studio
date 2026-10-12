@@ -1,0 +1,4 @@
+interface:
+  display_name: "Perf Profile"
+  short_description: "Structured performance profiling workflow"
+  default_prompt: "Use $perf-profile for the selected scope and report actual outcomes and remaining evidence."

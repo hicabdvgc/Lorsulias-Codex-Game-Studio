@@ -1,0 +1,5 @@
+interface:
+  display_name: "Consistency Check"
+  short_description: "Check shared facts and cross-document consistency"
+  default_prompt: "Use $consistency-check for the requested scope, applying the\
+    \ project contracts and reporting actual evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reverse Document"
+  short_description: "Recover documentation from implementation evidence"
+  default_prompt: "Use $reverse-document for the requested scoped task and report its actual outcome."

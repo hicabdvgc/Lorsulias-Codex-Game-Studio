@@ -1,0 +1,4 @@
+interface:
+  display_name: "Help"
+  short_description: "Find the next relevant workflow activity"
+  default_prompt: "Use $help for the selected project scope and report actual outputs and missing evidence."

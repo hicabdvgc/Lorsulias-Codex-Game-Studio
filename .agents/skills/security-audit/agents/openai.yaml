@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security Audit"
+  short_description: "Assess actual game security surfaces and evidence"
+  default_prompt: "Use $security-audit for the selected scope and report actual outcomes and remaining evidence."

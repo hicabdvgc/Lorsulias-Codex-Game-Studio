@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorm"
+  short_description: "Explore ideas and research for a manual game concept"
+  default_prompt: "Use $brainstorm for the requested scoped task and report its actual outcome."

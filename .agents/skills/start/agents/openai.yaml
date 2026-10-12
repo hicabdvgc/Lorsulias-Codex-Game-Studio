@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start"
+  short_description: "Orient new and returning studio projects"
+  default_prompt: "Use $start for the selected project scope and report actual outputs and missing evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adopt"
+  short_description: "Audit existing project handoff compatibility"
+  default_prompt: "Use $adopt for the selected project scope and report actual outputs and missing evidence."

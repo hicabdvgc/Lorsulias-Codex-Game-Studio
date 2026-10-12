@@ -1,0 +1,5 @@
+# Lorsulia project configuration. Uses the user's effective runtime choices.
+# Models, reasoning, permissions, concurrency, and UI preferences are inherited.
+# Project hooks require the active client's normal trust/enablement handling.
+[features]
+hooks = true

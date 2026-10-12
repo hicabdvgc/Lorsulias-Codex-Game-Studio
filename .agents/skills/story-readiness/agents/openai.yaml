@@ -1,0 +1,5 @@
+interface:
+  display_name: Story Readiness
+  short_description: Assess prerequisites and criterion-level readiness
+  default_prompt: Use $story-readiness for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Playtest Report"
+  short_description: "Record and analyze actual human playtest findings"
+  default_prompt: "Use $playtest-report for the selected scope and report actual outcomes and remaining evidence."

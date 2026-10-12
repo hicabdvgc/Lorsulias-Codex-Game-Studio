@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Decision"
+  short_description: "Propose, retrofit and accept evidenced decisions"
+  default_prompt: "Use $architecture-decision for the requested scoped task and report its actual outcome."

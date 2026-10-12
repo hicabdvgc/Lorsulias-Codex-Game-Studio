@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design System"
+  short_description: "Design systems with framework and resource contracts"
+  default_prompt: "Use $design-system for the requested scoped task and report its actual outcome."

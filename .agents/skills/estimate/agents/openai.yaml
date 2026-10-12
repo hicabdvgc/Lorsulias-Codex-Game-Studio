@@ -1,0 +1,5 @@
+interface:
+  display_name: Estimate
+  short_description: Estimate with traceable scope and evidence
+  default_prompt: Use $estimate for the requested scope, preserving existing authorization and reporting actual
+    evidence and missing inputs.

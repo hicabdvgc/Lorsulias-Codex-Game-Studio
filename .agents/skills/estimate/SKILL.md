@@ -1,0 +1,178 @@
+---
+name: estimate
+description: "Estimates task effort by analyzing complexity, dependencies, historical velocity, and risk factors. Produces a structured estimate with confidence levels."
+---
+Read `.codex/docs/work-preparation.md` for status authority, criterion-level evidence, applicable governance, authorization, concurrent writes and recovery.
+
+
+## Invocation and execution
+
+Invoke this workflow as `$estimate`.
+
+Arguments: `[task-description]`. Treat bracketed values as optional unless the workflow says otherwise.
+
+
+## Phase 1: Understand the Task
+
+Determine whether the argument is a natural-language task or a project-local
+Markdown path. For a story path, read the full file and extract ACs, ADR
+references, dependencies, type, and status. For a sprint path, read each real
+story path it lists and estimate those stories individually before aggregating.
+A nonexistent path, directory, project-external path, or non-Markdown file is a
+clear error rather than a task description. If natural language is too vague,
+ask for clarification before proceeding.
+
+Read the applicable `AGENTS.md` chain from repository root through each known
+candidate file's parent directory; the nearest rule wins. If candidate files are
+not yet known, read root guidance now and complete the chain after Phase 2.
+
+Read relevant design documents from `design/gdd/` if the task relates to a documented feature or system.
+
+---
+
+## Phase 2: Inspect Affected Work
+
+Identify files/modules from explicit story/epic links, named paths, and existing
+code references. If that evidence cannot identify a boundary, mark file count
+and affected modules `Unknown` and lower confidence; do not guess paths.
+
+- Assess complexity using only evidence actually available. Report LOC,
+  dependency counts, or cyclomatic complexity only when directly measured;
+  otherwise use qualitative Low/Medium/High and state what was unavailable.
+- Identify integration points with other systems
+- Check for existing test coverage in the affected areas
+- Read past sprint data from `production/sprints/` for similar completed tasks and historical velocity
+
+---
+
+## Phase 3: Analyze Complexity Factors and Calibrate
+
+Use observable completed work and cycle duration from existing sprint files to
+calibrate the Expected range when comparable history exists, and state the
+effect it had. Without comparable history, state the task-specific basis supplied
+by the executor, measurements or analogous work. If that cannot support a numeric
+range, leave it unestimated and identify the information needed. Capacity and
+elapsed calendar duration are separate from effort. Do not invent conversions
+between points, hours and days. Aggregate only compatible units.
+For a sprint input, reuse this calibrated single-story method for every resolved
+story. List unresolved story paths as unestimated and exclude them from numeric
+totals.
+
+Every quantified estimate must satisfy Optimistic ≤ Expected ≤ Pessimistic. The expected
+sub-task values in Suggested Breakdown must add to Recommended budget; state
+which work can overlap instead of subtracting parallel work invisibly.
+
+
+
+**Code Complexity:**
+- Lines of code in affected files
+- Number of dependencies and coupling level
+- Whether this touches core/engine code vs leaf/feature code
+- Whether existing patterns can be followed or new patterns are needed
+
+**Scope:**
+- Number of systems touched
+- New code vs modification of existing code
+- Amount of new test coverage required
+- Data migration or configuration changes needed
+- Resource collection, preparation and validation under selected type contracts
+- Tool implementation, complete workflow execution and intended-user evaluation
+- FRAMEWORK operations, integration, review and human evaluation effort
+
+**Risk:**
+- New technology or unfamiliar libraries
+- Unclear or ambiguous requirements
+- Dependencies on unfinished work
+- Cross-system integration complexity
+- Performance sensitivity
+
+---
+
+## Phase 4: Generate the Estimate
+
+```markdown
+## Task Estimate: [Task Name]
+Generated: [Date]
+
+### Task Description
+[Restate the task clearly in 1-2 sentences]
+
+### Complexity Assessment
+
+| Factor | Assessment | Notes |
+|--------|-----------|-------|
+| Systems affected | [List] | [Core, gameplay, UI, etc.] |
+| Files likely modified | [Count] | [Key files listed below] |
+| New code vs modification | [Ratio] | |
+| Integration points | [Count] | [Which systems interact] |
+| Test coverage needed | [Low / Medium / High] | |
+| Existing patterns available | [Yes / Partial / No] | |
+
+**Key files likely affected:**
+- `[path/to/file1]` -- [what changes here]
+
+### Effort Estimate
+
+**T-shirt size**: [S / M / L / XL] — [project scale and basis, or Unconfigured]
+
+| Scenario | Effort and unit / Unestimated | Assumption |
+|----------|------|------------|
+| Optimistic | [X] | Everything goes right, no surprises |
+| Expected | [Y] | Normal pace, minor issues, one round of review |
+| Pessimistic | [Z] | Significant task-specific unknowns surface |
+
+**Recommended budget: [Y and unit / Unestimated]**
+
+For sprint input, render this block per resolved story, followed by a sprint
+aggregate range derived from those story ranges. Show unresolved stories
+separately and do not fabricate values for them.
+
+### Confidence: [High / Medium / Low]
+
+[Explain which factors drive the confidence level for this specific task.]
+
+### Risk Factors
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|-----------|--------|------------|
+
+### Dependencies
+
+| Dependency | Status | Impact if Delayed |
+|-----------|--------|-------------------|
+
+### Suggested Breakdown
+
+| # | Sub-task | Estimate | Notes |
+|---|----------|----------|-------|
+| 1 | [Research / spike] | [X and unit / Unestimated] | |
+| 2 | [Core implementation] | [X and unit / Unestimated] | |
+| 3 | [Testing and validation] | [X and unit / Unestimated] | |
+| | **Total** | **[Y and unit / Unestimated]** | |
+
+### Notes and Assumptions
+- [Key assumption that affects the estimate]
+- [Any caveats about scope boundaries]
+```
+
+Output the estimate with a brief summary: recommended budget, confidence level, and the single biggest risk factor.
+
+This skill is read-only — no files are written. Verdict: **COMPLETE** — estimate generated.
+
+---
+
+## Phase 5: Next Steps
+
+- If confidence is Low because the task tests a core gameplay/fun hypothesis,
+  recommend a time-boxed `$prototype [spike-question] --spike`; this is not a
+  concept-phase gate verdict. For architectural uncertainty, recommend
+  the existing ADR path; for unclear requirements, ask for clarification.
+- Recommend decomposition when uncertainty, dependencies or independently verifiable outcomes warrant it; explain that basis.
+- To schedule the task: run `$sprint-plan update` to add it to the next sprint.
+
+### Guidelines
+
+- Give uncertainty ranges when supported. Use T-shirt sizes only with a stated project scale; unavailable estimates remain explicit.
+- The recommended budget should be the expected estimate, not the optimistic one
+- Match precision to the evidence and selected unit. Keep incompatible units separate.
+- Do not pad estimates silently — call out risk explicitly so the team can decide

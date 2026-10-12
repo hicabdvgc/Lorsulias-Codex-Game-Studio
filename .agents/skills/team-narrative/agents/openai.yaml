@@ -1,0 +1,5 @@
+interface:
+  display_name: "Team Narrative"
+  short_description: "Coordinate scoped narrative content and canon checks"
+  default_prompt: "Use $team-narrative for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

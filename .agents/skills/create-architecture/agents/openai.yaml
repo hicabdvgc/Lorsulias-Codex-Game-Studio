@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Architecture"
+  short_description: "Define architecture from designs and framework"
+  default_prompt: "Use $create-architecture for the requested scoped task and report its actual outcome."

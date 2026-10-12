@@ -1,0 +1,704 @@
+version: 1
+authority: Four-section Lorsulia workflow; required activities and completion outcomes are defined below.
+interpretation: required refers to workflow outcomes. Installed support and manual activities
+  are cataloged separately. execution manual means the activity can be performed directly
+  with appropriate human/agent responsibilities. No artifact existence check establishes completion.
+  Assisted activities use installed skills while retaining required developer decisions and
+  human evidence.
+maintenance:
+- name: skill-test
+  command: $skill-test
+  status: installed
+- name: skill-improve
+  command: $skill-improve
+  status: installed
+phases:
+  conceptualization:
+    label: Conceptualization
+    next_phase: development-schematics
+    steps:
+    - id: s1-1-1
+      name: Brainstorming
+      required: true
+      execution: assisted
+      completion: Explore an idea grounded in the developer’s interests and intended game experience.
+      available_support: $brainstorm
+    - id: s1-1-2
+      name: Record basic design choices
+      required: true
+      execution: manual
+      completion: Record basic game choices such as form, timing, and online/offline operation
+        where decided.
+    - id: s1-1-3
+      name: Record constaints and comittments
+      required: true
+      execution: manual
+      completion: Record exclusions, constraints, and commitments for the game and development
+        process.
+    - id: s1-1-4
+      name: Prepare supporting documentations
+      required: true
+      execution: manual
+      completion: Collect and study relevant supporting material before proceeding into design.
+      guidance: .codex/docs/templates/reference-game-study.md
+    - id: s1-1-5
+      name: Produce CONCEPT.md (manually!)
+      required: true
+      execution: manual
+      completion: The developer manually authors CONCEPT from their decisions, constraints,
+        and supporting material. AI preparation/review does not replace authorship.
+      artifact:
+        path: design/gdd/CONCEPT.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+    - id: s1-2-1
+      name: Identify games for reference
+      required: true
+      execution: manual
+      completion: Select existing reference games relevant to the intended genre and design
+        questions.
+    - id: s1-2-2
+      name: Play reference games and conduct case studies (with a consistent framework at hand)
+      required: true
+      execution: manual
+      completion: The developer plays reference games and records observations with a consistent
+        case-study framework and supporting evidence.
+      guidance: .codex/docs/templates/reference-game-study.md
+    - id: s1-2-3
+      name: Produce game_ref/ (a library of all the reference case studies)
+      required: true
+      execution: manual
+      completion: Assemble root-level game_ref/ from individual reference-game studies and associated
+        evidence folders; distinguish actual human play, sourced research and interpretation.
+      guidance: .codex/docs/templates/reference-game-study.md
+    - id: s1-3-1
+      name: Analyze the game concept with the MDA framework
+      required: true
+      execution: manual
+      completion: Analyze the manual concept in terms of mechanics, dynamics, and aesthetics.
+    - id: s1-3-2
+      name: Analyze the game concept with reference game case studies
+      required: true
+      execution: manual
+      completion: Use actual reference-game studies to identify comparable implementations and
+        likely development difficulties.
+    - id: s1-3-3
+      name: Analyze the game concept with development docs of the engine
+      required: true
+      execution: manual
+      completion: Ground feasibility and priorities in the selected engine’s documented capabilities
+        and constraints.
+    - id: s1-3-4
+      name: Produce BREAKDOWN.md (preliminary) (breakdown of the game's systems)
+      required: true
+      execution: assisted
+      completion: Produce preliminary BREAKDOWN from concept, reference studies, MDA, and engine
+        findings. A completed framework is not a prerequisite.
+      artifact:
+        path: design/gdd/BREAKDOWN.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+        maturity: preliminary
+      available_support: $map-systems
+    - id: s1-4-1
+      name: Develop an overall outlook of the framework
+      required: true
+      execution: manual
+      completion: Describe how the development framework will support integration, modification,
+        validation, and continued maintenance.
+      guidance: .codex/docs/templates/development-framework.md
+    - id: s1-4-2
+      name: Develop sub-components (e.g., content expansion, mechanics addition, visual & audio
+        artifact presentation, etc.) of the dev framework
+      required: true
+      execution: manual
+      completion: Describe the applicable content, mechanics, presentation, and framework-revision
+        activities over continued development.
+      guidance: .codex/docs/templates/development-framework.md
+    - id: s1-4-3
+      name: Develop an over-reaching work principle
+      required: true
+      execution: manual
+      completion: Connect the framework components into a coherent working procedure.
+      guidance: .codex/docs/templates/development-framework.md
+    - id: s1-4-4
+      name: Produce BREAKDOWN.md (full)
+      required: true
+      execution: assisted
+      completion: Complete BREAKDOWN using the developed framework principles and system boundaries.
+      artifact:
+        path: design/gdd/BREAKDOWN.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+        maturity: full
+      available_support: $map-systems
+    - id: s1-4-5
+      name: Produce FRAMEWORK.md (preliminary)
+      required: true
+      execution: manual
+      completion: Record the preliminary framework for continued additions and modifications;
+        initial GDD work refines it.
+      artifact:
+        path: docs/FRAMEWORK.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+        maturity: preliminary
+      guidance: .codex/docs/templates/development-framework.md
+  development-schematics:
+    label: Development Schematics
+    next_phase: pre-implementation
+    steps:
+    - id: s2-1-1
+      name: Design Game Development Documents for each of the systems in BREAKDOWN.md
+      required: true
+      execution: assisted
+      completion: Design each system using full BREAKDOWN and preliminary FRAMEWORK. Record
+        resource needs before future schemas exist.
+      available_support: $design-system
+    - id: s2-1-3
+      name: Develop an integration principle that connects each system within the dev framework
+      required: true
+      execution: manual
+      completion: Define how system changes propagate, shared concepts are interpreted, and
+        integration follows the framework.
+      guidance: .codex/docs/templates/development-framework.md
+    - id: s2-1-4
+      name: Produce GDD.md for each of the systems
+      required: true
+      execution: assisted
+      completion: Produce identifiable system GDDs under design/gdd/ describing rules, interactions,
+        resources, and integration responsibilities.
+      available_support: $design-system
+    - id: s2-1-5
+      name: Produce FRAMEWORK.md (full)
+      required: true
+      execution: manual
+      completion: Complete FRAMEWORK using the actual system designs and addition/modification
+        procedures; explain any executable components.
+      artifact:
+        path: docs/FRAMEWORK.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+        maturity: full
+      guidance: .codex/docs/templates/development-framework.md
+    - id: s2-2-1
+      name: Produce ARCHITECTURE_MASTER.md (Master Architecture Document)
+      required: true
+      execution: assisted
+      completion: Describe technical components, communication, and resource use from the system
+        designs and verified engine capabilities, supporting continued additions and modifications.
+      artifact:
+        path: docs/architecture/ARCHITECTURE_MASTER.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+      available_support: $create-architecture
+    - id: s2-2-2
+      name: Produce separate ADR.md (several Architecture Decision Records, ADRs)
+      required: true
+      execution: assisted
+      completion: Produce identifiable ADRs under docs/architecture/ with question, alternatives,
+        decision, rationale, consequences, and applicable dependencies. Distinguish Proposed
+        from Accepted.
+      available_support: $architecture-decision
+    - id: s2-2-3
+      name: Review architecture documents
+      required: true
+      execution: assisted
+      completion: Review master architecture and ADRs against GDDs and FRAMEWORK, resolving
+        conflicting decisions and interface expectations.
+      available_support: $architecture-review
+    - id: s2-2-4
+      name: Produce CONTROL.md (Control Manifest)
+      required: true
+      execution: assisted
+      completion: Derive scoped Required/Forbidden/Guardrail rules from accepted decisions;
+        use integer Manifest Version for changed governing rules.
+      artifact:
+        path: docs/architecture/CONTROL.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+      available_support: $create-control-manifest
+    - id: s2-2-5
+      name: Produce ACCESSIBILITY.md (Accessibility Requirements)
+      required: true
+      execution: manual
+      completion: Record project-selected accessibility commitments and how they will be evaluated.
+      artifact:
+        path: docs/ACCESSIBILITY.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+    - id: s2-3-1
+      name: Analyze mechanics' requirement on game resources
+      required: true
+      execution: manual
+      completion: Identify the information, properties, relationships, and material each mechanic
+        requires.
+    - id: s2-3-2
+      name: Analyze dynamics' requirement on game resources
+      required: true
+      execution: manual
+      completion: Identify resource variation and combinations needed for intended interactions
+        during play.
+    - id: s2-3-3
+      name: Analyze aesthetics' requirement on game resources
+      required: true
+      execution: manual
+      completion: Describe visual, audio, written, and other resource qualities needed for the
+        intended perception and experience.
+    - id: s2-3-4
+      name: Mapping resource requirements to each game systems
+      required: true
+      execution: manual
+      completion: Map each resource requirement to its consuming systems and clarify shared
+        requirements.
+    - id: s2-3-5
+      name: Produce RES_TYPE.md (each type of resource needed in the game and how they relate
+        to each game system)
+      required: true
+      execution: manual
+      completion: Record resource types from MDA and system requirements, with identity, relationships
+        and unresolved decisions in root RES_TYPE.md.
+      guidance: .codex/docs/templates/resource-type-catalog.md
+      artifact:
+        path: RES_TYPE.md
+        purpose: Selected types, system mappings, relationships and open decisions.
+    - id: s2-3-6
+      name: Produce separate TYPE_TEMP for each type of resources and resource_templates/ (templates
+        for each type of resource after a formal formatting transformation)
+      required: true
+      execution: manual
+      completion: Define identifiable TYPE_TEMP contracts and usable templates under root resource_templates/.
+        Select applicable fields, formats, sources, library outputs and import mappings per
+        type.
+      guidance: .codex/docs/templates/resource-type-definition.md
+    - id: s2-4-1
+      name: Individual GDD revision
+      required: true
+      execution: assisted
+      completion: Revise each GDD using architecture/resource decisions, resolving contradictions
+        and remaining implementation ambiguities.
+      available_support: $design-review
+    - id: s2-4-2
+      name: Framework integration review (how each GDD sits within the dev framework)
+      required: true
+      execution: assisted
+      completion: Review each GDD against the completed framework and its addition/modification
+        routes.
+      available_support: $design-review
+    - id: s2-4-3
+      name: Resource integration review (how different resources goes into the spaces defined
+        by each GDD)
+      required: true
+      execution: assisted
+      completion: Review GDD resource expectations against RES_TYPE and relevant templates;
+        revise conflicting expectations together.
+      available_support: $design-review
+    - id: s2-4-4
+      name: GDD consistency review
+      required: true
+      execution: assisted
+      completion: Resolve cross-GDD contradictions in shared concepts, rules, resources, and
+        interactions.
+      available_support: $review-all-gdds
+  pre-implementation:
+    label: Pre-Implementation
+    next_phase: implementation
+    steps:
+    - id: s3-1
+      name: Loose Files Preparation
+      required: true
+      execution: manual
+      completion: Prepared source material satisfies the selected resource requirements; formatting
+        follows in Section 3.2.
+      guidance: .codex/docs/resource-preparation.md
+    - id: s3-2-1
+      name: Transform each loose file for resources with TYPE_TEMP in resource_templates/
+      required: true
+      execution: manual
+      completion: Transform source material with its type template; retain source/output linkage
+        and check the consuming system requirements.
+      guidance: .codex/docs/resource-preparation.md
+    - id: s3-2-2
+      name: Produce res_lib/ (a library of all the resources)
+      required: true
+      execution: manual
+      completion: Place validated prepared resources under root res_lib/ according to selected
+        type contracts; retain provenance and distinguish derived imports.
+      guidance: .codex/docs/resource-preparation.md
+    - id: s3-3-1
+      name: Define tools outside the engine's boundary for development-relevant roles
+      required: true
+      execution: manual
+      completion: Identify actual development activities insufficiently supported by engine
+        facilities; define intended user, inputs, and outputs for each needed tool.
+      guidance: .codex/docs/tool-development.md
+    - id: s3-3-2
+      name: Develop each tools
+      required: true
+      execution: manual
+      completion: Build each defined tool from its specification and representative inputs.
+        Its future output is not a pickup prerequisite.
+      guidance: .codex/docs/tool-development.md
+    - id: s3-3-3
+      name: Perform end-to-end tests and human-tests
+      required: true
+      execution: manual
+      completion: Exercise the complete input-to-use activity and observe the intended human
+        user; revise behavior and instructions from evidence.
+      guidance: .codex/docs/tool-development.md
+    - id: s3-3-4
+      name: Produce tools_lib/ (a library of all the tools)
+      required: true
+      execution: manual
+      completion: Maintain selected tools and their setup, usage, end-to-end verification and
+        actual intended-user evidence under root tools_lib/. Unperformed human evaluation remains
+        pending.
+      guidance: .codex/docs/tool-development.md
+  implementation:
+    label: Implementation
+    next_phase: null
+    steps:
+    - id: s4-1-1
+      name: Build UX Specs for Key Screens
+      required: true
+      execution: assisted
+      completion: Specify relevant key-screen layouts, information, interactions, states, navigation,
+        resources, and accessibility commitments.
+      available_support: $ux-design
+    - id: s4-1-2
+      name: Build the Vertical Slice
+      required: true
+      execution: assisted
+      completion: Build a coherent playable slice demonstrating integrated systems and framework-based
+        addition/modification using prepared resources/tools.
+      available_support: $vertical-slice
+    - id: s4-1-3
+      name: Create Epics and Stories From Design Artifacts
+      required: true
+      execution: assisted
+      completion: Create epics and stories from the applicable designs, architecture, framework,
+        and slice experience, including resource/tool work.
+      available_support: $create-epics / $create-stories
+      guidance: .codex/docs/work-preparation.md
+    - id: s4-1-4
+      name: Validate Stories Before Pickup
+      required: true
+      execution: assisted
+      completion: Check intended result, applicable decisions, genuine prerequisite inputs,
+        and feasible completion evaluation. Future outputs may be absent.
+      available_support: $story-readiness
+      guidance: .codex/docs/work-preparation.md
+    - id: s4-1-5
+      name: Validate progress against Vertical Slice Hard Gate
+      required: true
+      execution: assisted
+      completion: 'Hard gate: actual play and development evidence demonstrate intended experience,
+        system integration, usability, and framework operations. Required failures or unassessed
+        checks prevent production.'
+      available_support: $gate-check
+    - id: s4-1-6
+      name: Produce MILESTONE.md
+      required: true
+      execution: assisted
+      completion: Define project-specific MVP, Alpha, Beta, and Gold scope, quality expectations,
+        playtest purposes, and completion criteria.
+      artifact:
+        path: production/milestones/MILESTONE.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+      available_support: $define-milestones
+      guidance: .codex/docs/work-preparation.md
+    - id: s4-2-1
+      name: Minimum Viable Product and play-test
+      required: true
+      execution: assisted
+      completion: Build and human-playtest MVP against MILESTONE.md; address findings that prevent
+        its project-defined criteria from being met.
+      available_support: $dev-story / $playtest-report / $milestone-review
+    - id: s4-2-2
+      name: Alpha Version and play-test
+      required: true
+      execution: assisted
+      completion: Build and human-playtest Alpha against MILESTONE.md; address findings that
+        prevent its project-defined criteria from being met.
+      available_support: $dev-story / $playtest-report / $milestone-review
+    - id: s4-2-3
+      name: Beta Version and play-test
+      required: true
+      execution: assisted
+      completion: Build and human-playtest Beta against MILESTONE.md; address findings that
+        prevent its project-defined criteria from being met.
+      available_support: $dev-story / $playtest-report / $milestone-review
+    - id: s4-2-4
+      name: Gold Version and play-test
+      required: true
+      execution: assisted
+      completion: Build and human-playtest Gold against MILESTONE.md; address findings that
+        prevent its project-defined criteria from being met.
+      available_support: $dev-story / $playtest-report / $milestone-review
+    - id: s4-3-1
+      name: Produce RELEASE_CHECKLIST.md
+      required: true
+      execution: manual
+      completion: Derive the release checklist from actual concept/design/accessibility/milestone
+        commitments and the chosen release method.
+      artifact:
+        path: production/releases/RELEASE_CHECKLIST.md
+        purpose: Authoritative output; inspect contents and applicable status/evidence.
+      available_support: $release-checklist
+    - id: s4-3-2
+      name: Check the game against the checklist
+      required: true
+      execution: assisted
+      completion: Perform release checks against the identified delivery version and recheck
+        effects of corrections; record unresolved findings.
+      available_support: $gate-check final-acceptance
+    - id: s4-4-1
+      name: Generate Player-Facing Content
+      required: true
+      execution: manual
+      completion: Prepare the player-facing materials needed by the chosen release method and
+        verify they accurately describe the delivered version.
+    - id: s4-4-2
+      name: Coordinate the Release
+      required: true
+      execution: manual
+      completion: Identify the release version, destination, accompanying materials, action
+        sequence, and actual responsibilities.
+      available_support: $team-release
+    - id: s4-4-3
+      name: Ship
+      required: true
+      execution: manual
+      completion: Carry out the authorized release and verify player access and operation of
+        the delivered version.
+    - id: s4-4-4
+      name: Post-launch
+      required: true
+      execution: manual
+      completion: Use actual feedback and observations to select framework-guided changes; revise
+        the framework when experience warrants it.
+supporting_capabilities:
+- name: setup-engine
+  command: $setup-engine
+  status: installed
+- name: prototype
+  command: $prototype
+  status: installed
+- name: reverse-document
+  command: $reverse-document
+  status: installed
+- name: art-bible
+  command: $art-bible
+  status: installed
+- name: ux-design
+  command: $ux-design
+  status: installed
+- name: ux-review
+  command: $ux-review
+  status: installed
+- name: quick-design
+  command: $quick-design
+  status: installed
+- name: asset-audit
+  command: $asset-audit
+  status: installed
+- name: content-audit
+  command: $content-audit
+  status: installed
+- name: consistency-check
+  command: $consistency-check
+  status: installed
+- name: balance-check
+  command: $balance-check
+  status: installed
+- name: asset-spec
+  command: $asset-spec
+  status: installed
+- name: localize
+  command: $localize
+  status: installed
+- name: team-narrative
+  command: $team-narrative
+  status: installed
+- name: team-level
+  command: $team-level
+  status: installed
+- name: team-audio
+  command: $team-audio
+  status: installed
+- name: review-all-gdds
+  command: $review-all-gdds
+  status: installed
+- name: sprint-plan
+  command: $sprint-plan
+  status: installed
+- name: retrospective
+  command: $retrospective
+  status: installed
+- name: estimate
+  command: $estimate
+  status: installed
+- name: tech-debt
+  command: $tech-debt
+  status: installed
+- name: scope-check
+  command: $scope-check
+  status: installed
+- name: test-setup
+  command: $test-setup
+  status: installed
+- name: test-helpers
+  command: $test-helpers
+  status: installed
+- name: qa-plan
+  command: $qa-plan
+  status: installed
+- name: define-milestones
+  command: $define-milestones
+  status: installed
+- name: dev-story
+  command: $dev-story
+  status: installed
+- name: vertical-slice
+  command: $vertical-slice
+  status: installed
+- name: propagate-design-change
+  command: $propagate-design-change
+  status: installed
+- name: integrate-worktrees
+  command: $integrate-worktrees
+  status: installed
+- name: story-done
+  command: $story-done
+  status: installed
+- name: test-evidence-review
+  command: $test-evidence-review
+  status: installed
+- name: code-review
+  command: $code-review
+  status: installed
+- name: security-audit
+  command: $security-audit
+  status: installed
+- name: perf-profile
+  command: $perf-profile
+  status: installed
+- name: test-flakiness
+  command: $test-flakiness
+  status: installed
+- name: smoke-check
+  command: $smoke-check
+  status: installed
+- name: regression-suite
+  command: $regression-suite
+  status: installed
+- name: soak-test
+  command: $soak-test
+  status: installed
+- name: bug-report
+  command: $bug-report
+  status: installed
+- name: bug-triage
+  command: $bug-triage
+  status: installed
+- name: playtest-report
+  command: $playtest-report
+  status: installed
+- name: project-stage-detect
+  command: $project-stage-detect
+  status: installed
+- name: gate-check
+  command: $gate-check
+  status: installed
+- name: sprint-status
+  command: $sprint-status
+  status: installed
+- name: milestone-review
+  command: $milestone-review
+  status: installed
+- name: team-combat
+  command: $team-combat
+  status: installed
+- name: team-ui
+  command: $team-ui
+  status: installed
+- name: team-qa
+  command: $team-qa
+  status: installed
+- name: team-polish
+  command: $team-polish
+  status: installed
+- name: start
+  command: $start
+  status: installed
+- name: help
+  command: $help
+  status: installed
+- name: adopt
+  command: $adopt
+  status: installed
+- name: onboard
+  command: $onboard
+  status: installed
+- name: studio-status
+  command: $studio-status
+  status: installed
+- name: release-checklist
+  command: $release-checklist
+  status: installed
+- name: launch-checklist
+  command: $launch-checklist
+  status: installed
+- name: hotfix
+  command: $hotfix
+  status: installed
+- name: day-one-patch
+  command: $day-one-patch
+  status: installed
+- name: changelog
+  command: $changelog
+  status: installed
+- name: patch-notes
+  command: $patch-notes
+  status: installed
+- name: team-release
+  command: $team-release
+  status: installed
+- name: team-live-ops
+  command: $team-live-ops
+  status: installed
+resource_procedures:
+- name: Resource preparation
+  guidance: .codex/docs/resource-preparation.md
+  execution: manual or selected existing tools
+- name: Tool development
+  guidance: .codex/docs/tool-development.md
+  execution: assigned available executor; actual intended-user evaluation required
+work_preparation:
+  guidance: .codex/docs/work-preparation.md
+  status_authority: Story header Status; sprint YAML derives selected sprint membership statuses.
+  root_resolution: .codex/docs/code-root-resolution.md
+  runner_references: .codex/docs/testing-engine-reference.md
+  observer: .codex/scripts/story-status.sh (read-only; no lifecycle registration)
+  milestones: Final authoring follows epic/story preparation and the vertical-slice hard gate;
+    early drafts retain missing evidence.
+execution:
+  guidance: .codex/docs/execution-and-evidence.md
+  progression: .codex/docs/progression.md
+  stage_marker: production/stage.txt; declared catalog section only
+  playtests: production/playtests/
+  artifact_observer: .codex/scripts/artifact-check.sh; discovery only
+  gap_observer: .codex/hooks/detect-gaps.sh; explicit observer and bounded SessionStart startup/resume/clear
+    discovery
+release:
+  guidance: .codex/docs/release-and-operations.md
+  requirements: production/releases/RELEASE_CHECKLIST.md
+  internal_reports: production/releases/release-checklist-[date].md
+  external_reports: production/launch/launch-checklist-[date].md
+  patch_notes: production/releases/[version]/patch-notes.md
+  meaning: Reports need exact candidate/baseline evidence. READY does not authorize delivery.
+continuity:
+  guidance: .codex/docs/context-management.md
+  checkpoint: production/session-state/active.md
+  parser: .codex/scripts/session-state.py
+  rotation: .codex/scripts/rotate-session-state.sh; explicit only
+optional_support:
+- name: Project coherence observation
+  guidance: .codex/docs/project-coherence.md
+  observer: .codex/scripts/project-coherence.sh
+  meaning: Explicit project scope; compares declarations and metadata without executing commands or establishing readiness.
+- name: Pitch authoring aid
+  guidance: .codex/docs/templates/pitch-document.md
+  meaning: Optional presentation of developer decisions and sourced evidence; no additional workflow gate.

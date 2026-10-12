@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review implementation against applicable contracts"
+  default_prompt: "Use $code-review for the selected scope and report actual outcomes and remaining evidence."

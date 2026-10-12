@@ -1,0 +1,5 @@
+interface:
+  display_name: Define Milestones
+  short_description: Define project milestone outcomes and evidence
+  default_prompt: Use $define-milestones for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

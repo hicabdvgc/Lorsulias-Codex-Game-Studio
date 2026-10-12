@@ -1,0 +1,4 @@
+interface:
+  display_name: "Launch Checklist"
+  short_description: "Assess selected external launch requirements"
+  default_prompt: "Use $launch-checklist for the selected project scope and report actual outputs and missing evidence."

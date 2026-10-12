@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Qa"
+  short_description: "Orchestrate the QA team through a full testing cycle"
+  default_prompt: "Use $team-qa for the selected scope and report actual outcomes and remaining evidence."

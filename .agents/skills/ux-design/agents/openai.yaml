@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ux Design"
+  short_description: "Design relevant screens, HUDs and shared interactions"
+  default_prompt: "Use $ux-design for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

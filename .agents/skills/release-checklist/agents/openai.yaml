@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Checklist"
+  short_description: "Define requirements and assess release readiness"
+  default_prompt: "Use $release-checklist for the selected project scope and report actual outputs and missing evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onboard"
+  short_description: "Explain a contributor role or project area"
+  default_prompt: "Use $onboard for the selected project scope and report actual outputs and missing evidence."

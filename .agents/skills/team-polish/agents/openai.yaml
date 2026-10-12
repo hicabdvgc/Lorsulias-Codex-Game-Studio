@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Polish"
+  short_description: "Refine an implemented area and verify its behavior"
+  default_prompt: "Use $team-polish for the selected scope and report actual outcomes and remaining evidence."

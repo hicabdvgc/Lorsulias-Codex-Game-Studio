@@ -1,0 +1,4 @@
+interface:
+  display_name: "Story Done"
+  short_description: "End-of-story completion review"
+  default_prompt: "Use $story-done for the selected scope and report actual outcomes and remaining evidence."

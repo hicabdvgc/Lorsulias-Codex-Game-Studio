@@ -1,0 +1,5 @@
+interface:
+  display_name: Scope Check
+  short_description: Scope check with traceable scope and evidence
+  default_prompt: Use $scope-check for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Review All Gdds"
+  short_description: "Review cross-system design and resource integration"
+  default_prompt: "Use $review-all-gdds for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

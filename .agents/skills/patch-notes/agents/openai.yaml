@@ -1,0 +1,4 @@
+interface:
+  display_name: "Patch Notes"
+  short_description: "Write factual player-facing release notes"
+  default_prompt: "Use $patch-notes for the selected project scope and report actual outputs and missing evidence."

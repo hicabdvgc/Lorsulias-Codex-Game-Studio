@@ -1,0 +1,4 @@
+interface:
+  display_name: "Day One Patch"
+  short_description: "Prepare a verified patch for the selected release"
+  default_prompt: "Use $day-one-patch for the selected project scope and report actual outputs and missing evidence."

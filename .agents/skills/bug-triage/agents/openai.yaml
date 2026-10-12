@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bug Triage"
+  short_description: "Triage the actual backlog and supported trends"
+  default_prompt: "Use $bug-triage for the selected scope and report actual outcomes and remaining evidence."

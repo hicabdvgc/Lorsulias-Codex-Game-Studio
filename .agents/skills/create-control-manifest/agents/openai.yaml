@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Control Manifest"
+  short_description: "Derive scoped rules from accepted decisions"
+  default_prompt: "Use $create-control-manifest for the requested scoped task and report its actual outcome."

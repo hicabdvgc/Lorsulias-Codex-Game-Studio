@@ -1,0 +1,4 @@
+interface:
+  display_name: "Milestone Review"
+  short_description: "Review defined milestone outcomes and evidence"
+  default_prompt: "Use $milestone-review for the selected scope and report actual outcomes and remaining evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Improve"
+  short_description: "Repair demonstrated skill defects and verify outcomes"
+  default_prompt: "Use $skill-improve to repair a demonstrated studio skill issue."

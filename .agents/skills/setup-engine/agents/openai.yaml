@@ -1,0 +1,4 @@
+interface:
+  display_name: "Setup Engine"
+  short_description: "Select engine choices and verify reference coverage"
+  default_prompt: "Use $setup-engine for the requested scoped task and report its actual outcome."

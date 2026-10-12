@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bug Report"
+  short_description: "Record, verify and close evidence-backed defects"
+  default_prompt: "Use $bug-report for the selected scope and report actual outcomes and remaining evidence."

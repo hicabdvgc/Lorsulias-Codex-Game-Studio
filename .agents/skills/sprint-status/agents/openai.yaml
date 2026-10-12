@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sprint Status"
+  short_description: "Fast sprint status check for game-studio projects"
+  default_prompt: "Use $sprint-status for the selected scope and report actual outcomes and remaining evidence."

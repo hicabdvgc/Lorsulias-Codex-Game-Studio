@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Review"
+  short_description: "Review scoped design and integration evidence"
+  default_prompt: "Use $design-review for the requested scoped task and report its actual outcome."

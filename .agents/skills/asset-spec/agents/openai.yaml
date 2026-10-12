@@ -1,0 +1,5 @@
+interface:
+  display_name: "Asset Spec"
+  short_description: "Specify assets and maintain shared resource identities"
+  default_prompt: "Use $asset-spec for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

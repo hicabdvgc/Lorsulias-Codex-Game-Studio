@@ -1,0 +1,5 @@
+interface:
+  display_name: "Content Audit"
+  short_description: "Compare content requirements with resource evidence"
+  default_prompt: "Use $content-audit for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

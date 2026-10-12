@@ -1,0 +1,130 @@
+---
+name: scope-check
+description: "Analyze a feature or sprint for scope creep by comparing current scope against the original plan. Flags additions, quantifies bloat, and recommends cuts. Use when user says 'any scope creep', 'scope review', 'are we staying in scope'."
+---
+Read `.codex/docs/work-preparation.md` for status authority, criterion-level evidence, applicable governance, authorization, concurrent writes and recovery.
+
+
+## Invocation and execution
+
+Invoke this workflow as `$scope-check`.
+
+Arguments: `[feature-name or sprint-N]`. Treat bracketed values as optional unless the workflow says otherwise.
+
+
+# Scope Check
+
+Return findings conversationally by default. An explicit report-save request
+authorizes that bounded output; it never authorizes rewriting the scope baseline.
+
+Compare a selected baseline document with current story/goal/deliverable scope.
+Code files, commits, and TODOs are supporting evidence only; they are never
+counted as scope items.
+
+---
+
+## Phase 1: Resolve Target and Baseline
+
+Accept a feature name, `sprint-N`, milestone name, or a project-contained story
+path. With no argument, read existing active milestone/sprint references and
+resolve the current sprint against that milestone. If there are multiple
+candidates or no unique baseline, list the candidates and stop rather than guess.
+
+- Feature: first try an exact slug and an explicit epic/story/GDD reference,
+  then a unique title match. If more than one candidate remains, list each path
+  and ask the user to select one.
+- Sprint: use its exact sprint plan as the baseline.
+- Milestone: use its exact milestone goals/deliverables.
+- Story path: read the story and its explicitly referenced parent epic as baseline.
+
+Label the result **selected baseline document at audit time**, and cite its path
+and available date. A current GDD is not proof of the original historical scope.
+If no earlier existing plan artifact is available, state that historical creep
+cannot be proven and do not attribute when the change occurred.
+
+---
+
+## Phase 2: Build a Comparable Current Scope
+
+Extract baseline items at one level: stories, goals, or deliverables. Build the
+current set from existing artifacts at the same level. Use related source files,
+commits, and TODO/FIXME references only as evidence that a particular item exists
+or changed; never count them as additional scope items.
+
+Read Git history only when the baseline has an explicit start date or audit
+period, and constrain the query to that period. If no period exists, skip the
+history query and state that commit evidence is unavailable.
+
+A TODO/FIXME/HACK is supporting evidence only when the comment explicitly
+references the selected story, feature, goal, or deliverable. An unlinked debt
+marker is never an addition.
+
+---
+
+## Phase 3: Compare Item by Item
+
+For each addition, locate an existing authorized change record, including an applicable FRAMEWORK operation,
+accepted scope decision, comparable cut or explicit timeline extension. Report additions, removals,
+and their mappings separately. Do not let the number of small removals cancel a
+larger addition.
+
+Classify justification as `Documented`, `Undocumented`, or `Unclear` and cite
+only an existing artifact. Do not infer who requested or approved an addition.
+
+If comparable effort exists, report the evidence-backed effort delta. If it does
+not, omit a percentage and state that item counts cannot establish bloat because
+the items may differ in size. Removed or descoped items always remain separate
+from additions and cannot create a negative-growth PASS.
+
+```markdown
+## Scope Check: [Target]
+**Baseline at audit time**: [path and date]
+**Historical limitation**: [earlier artifact path or cannot prove historical creep]
+
+### Comparable Scope
+| Item | Baseline | Current | Evidence |
+|------|----------|---------|----------|
+| [story/goal/deliverable] | [yes/no] | [yes/no] | [artifact path] |
+
+### Additions
+| Addition | Authorized Change / Cut / Extension | Evidence | Documentation |
+|----------|-----------------------------------|----------|---------------|
+| [item] | [mapped item/extension or none] | [path] | [Documented/Undocumented/Unclear] |
+
+### Removals
+| Removal | Evidence |
+|---------|----------|
+| [item] | [path] |
+
+### Quantification
+[Comparable effort delta, or: percentage unavailable — comparable effort data absent]
+
+### Risks and Recommendations
+[Evidence-backed schedule, quality, and integration risks; user decision points]
+```
+
+Recommendations may rank a cut only when the selected baseline explicitly marks
+priority or core experience. Otherwise list the tradeoff as a user decision and
+do not claim which item should be cut.
+
+---
+
+## Phase 4: Verdict
+
+- **PASS**: no unexplained additions are evidenced against the identified baseline.
+- **NOT ASSESSED**: no usable baseline or comparable current scope exists. A current comparison can still be reported, but cannot establish historical creep.
+- **CONCERNS**: unmapped additions exist but their effort/impact is incomplete
+  or plausibly manageable.
+- **FAIL**: evidence shows one or more unmapped additions materially exceed the
+  selected baseline without a documented applicable scope decision, equivalent cut or explicit timeline extension.
+
+Do not derive a verdict from a net item-count percentage. Present descoped items
+separately so they cannot mask additions.
+
+---
+
+## Phase 5: Handoff
+
+Preserve the reviewed inputs. Cite the exact unresolved additions and the existing planning
+artifact that would need a user-authorized update. Do not invoke a gate or write
+a new baseline.

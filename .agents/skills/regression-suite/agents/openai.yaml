@@ -1,0 +1,4 @@
+interface:
+  display_name: "Regression Suite"
+  short_description: "Maintain regression coverage references and gaps"
+  default_prompt: "Use $regression-suite for the selected scope and report actual outcomes and remaining evidence."

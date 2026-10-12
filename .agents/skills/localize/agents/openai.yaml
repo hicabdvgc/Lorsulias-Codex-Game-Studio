@@ -1,0 +1,5 @@
+interface:
+  display_name: "Localize"
+  short_description: "Prepare and evaluate selected localization workflows"
+  default_prompt: "Use $localize for the requested scope, applying the project contracts\
+    \ and reporting actual evidence."

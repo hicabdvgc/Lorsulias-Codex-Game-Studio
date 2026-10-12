@@ -1,0 +1,5 @@
+interface:
+  display_name: "Asset Audit"
+  short_description: "Audit declared resource formats and constraints"
+  default_prompt: "Use $asset-audit for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

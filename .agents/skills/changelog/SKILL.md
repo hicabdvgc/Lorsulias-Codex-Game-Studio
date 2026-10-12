@@ -1,0 +1,191 @@
+---
+name: changelog
+description: "Generate internal and player-facing changelogs from a verified Git range and actual work evidence."
+---
+
+## Invocation and execution
+
+Invoke this workflow as `$changelog`.
+
+Read root instructions and the shared contracts linked below. Carry existing bounded task authorization
+through saves; clarify consequential unresolved choices. Reread shared files before writes, preserve
+concurrent changes and stable identities, and read back promised outputs. Required independent review
+and actual human evidence survive executor changes and review-depth choices. Report missing evidence
+and preserve partial work; a saved document never establishes approval or execution.
+
+Arguments: `[version|sprint-number]`. Treat bracketed values as optional unless the workflow says otherwise.
+
+Before any Git history read, run `git rev-parse --is-inside-work-tree`. If this
+fails or is false, stop; do not continue with invented or empty Git history. Only
+then run `git log --oneline -30` and
+`git tag --list --sort=-v:refname` (retain the first five results).
+
+
+## Phase 1: Parse Arguments
+
+Accept no argument, exactly one existing release version/tag, or exactly one
+sprint identifier. With no argument, target current unreleased changes and derive
+a display version only from existing project data; if none exists, ask rather
+than guessing. Reject ambiguous version-versus-sprint text, unknown flags,
+missing tags, missing sprint files, or sprint files without usable boundaries.
+Repository validation has already completed before this phase.
+
+---
+
+## Phase 2: Gather Change Data
+
+Select the range that matches the requested target:
+
+- For a specified release tag, use the previous release tag through that target
+  tag (`[previous-tag]..[target-tag]`). Do not use `HEAD` for an older release.
+- If the specified tag is the first release tag, use history ending at that tag.
+- With no target version, use the latest release tag through `HEAD` for current
+  unreleased changes.
+- For sprint mode, use only that sprint's existing date range and stories whose authoritative Status is Complete.
+
+If the requested target tag or sprint boundary cannot be found, stop rather than
+substituting a different range.
+
+```
+git log --oneline [selected-start]..[selected-end]
+```
+
+If no tags exist, use the full available history for the selected endpoint; explicitly label any requested narrower range and its coverage. Resolve ambiguous release ordering from actual project release references rather than version-sort alone.
+
+Read sprint reports from `production/sprints/` for the relevant period to understand planned work and context behind changes.
+
+Read a GDD only to explain a change already evidenced by an in-range commit or
+completed story. A completed design document alone is never evidence that a feature
+shipped and must not create a changelog item.
+
+Read `production/qa/bugs/` and include Known Issues only from reports whose
+current top-level Status is Open and whose relevance to this release/sprint is
+supported. If no bug source is available, omit Known Issues rather than guessing.
+
+---
+
+## Phase 3: Categorize Changes
+
+Categorize every change into one of these categories:
+
+- **New Features**: Entirely new gameplay systems, modes, or content
+- **Improvements**: Enhancements to existing features, UX improvements, performance gains
+- **Bug Fixes**: Corrections to broken behavior
+- **Balance Changes**: Tuning of gameplay values, difficulty, economy
+- **Known Issues**: Issues the team is aware of but have not yet resolved
+- **Miscellaneous**: Changes that do not fit the above categories, or commits whose messages are too vague to classify confidently
+
+For each commit, check whether the message contains a task ID or story reference
+(e.g. `[STORY-123]`, `TR-`, `#NNN`, or similar). Count commits that lack any task reference
+and include this count in the Phase 4 Metrics section as: `Commits without task reference: [N]`.
+
+---
+
+## Phase 4: Generate Internal Changelog
+
+```markdown
+# Internal Changelog: [Version]
+Date: [Date]
+Sprint(s): [Sprint numbers covered]
+Commits: [Count]
+
+## New Features
+- [Feature Name] -- [Technical description, affected systems]
+  - Design doc: [link if applicable]
+
+## Improvements
+- [Improvement] -- [What changed technically and why]
+
+## Bug Fixes
+- [BUG-ID] [Description of bug and root cause]
+  - Fix: [What was changed]
+
+## Balance Changes
+- [What was tuned] -- [Old value -> New value] -- [Design intent]
+
+## Technical Debt / Refactoring
+- [What was cleaned up and why]
+
+## Miscellaneous
+- [Change that didn't fit other categories, or vague commit message]
+
+## Known Issues
+- [Open bug description] -- [recorded severity] -- [ETA only if explicitly known]
+
+[Omit this section when no relevant Open bug report was read.]
+
+## Metrics
+- Total commits: [N]
+- Commits without task reference: [N]
+```
+
+---
+
+## Phase 5: Generate Player-Facing Changelog
+
+```markdown
+# What is New in [Version]
+
+## New Features
+- **[Feature Name]**: [Player-friendly description of what they can now do
+  and why it is exciting. Focus on the experience, not the implementation.]
+
+## Improvements
+- **[What improved]**: [How this makes the game better for the player.
+  Be specific but avoid jargon.]
+
+## Bug Fixes
+- Fixed an issue where [describe what the player experienced, not what was
+  wrong in the code]
+- Fixed [player-visible symptom]
+
+## Balance Changes
+- [What changed in player-understandable terms and the design intent.
+  Example: "Healing potions now restore 50 HP (up from 30) -- we felt
+  players needed more recovery options in late-game encounters."]
+
+## Known Issues
+- We are aware of [issue from a relevant Open bug report, in player terms].
+  [Include a workaround only when the bug report provides one.]
+
+[Omit this section when no relevant Open bug report was read.]
+
+---
+Thank you for playing! Your feedback helps us make the game better.
+[Include a feedback line only when an existing configured issue-report link was read.]
+```
+
+---
+
+## Phase 6: Output
+
+Output both changelogs to the user. The internal changelog is the primary working document. The player-facing changelog is ready for community posting after review.
+
+---
+
+## Phase 7: Optional history save
+
+Use `.codex/docs/templates/changelog-template.md` when useful for structure, retaining the internal
+and player-facing distinction above. Carry an explicit request to save through without another prompt;
+otherwise offer the optional `docs/CHANGELOG.md` update. Reread before writing and preserve concurrent
+and historical entries. Update only the matching version section if present; prepend a new version
+without duplicating it. Unchanged content needs no write. Read back the saved entry. CHANGELOG WRITTEN
+means that save succeeded; COMPLETE means the requested conversational output was generated. Do not
+claim a save when declined or failed. Version scope and commit range remain in the internal record.
+
+## Phase 8: Next Steps
+
+- Use `$patch-notes [version]` to generate a styled, saved version for public release.
+- Use `$release-checklist` before publishing the changelog externally.
+
+### Guidelines
+
+- Never expose internal code references, file paths, or developer names in the player-facing changelog
+- Group related changes together rather than listing individual commits
+- If a commit message is unclear, check the associated files and sprint data for context
+- Include balance-change reasoning when its source is supplied; identify an unavailable rationale without inventing one
+- Known issues should be honest — players appreciate transparency
+- If the git history is messy (merge commits, reverts, fixup commits), clean up the narrative rather than listing every commit literally
+
+
+Read `.codex/docs/release-and-operations.md` for exact candidate, evidence and publication handoffs.

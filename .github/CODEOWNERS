@@ -1,0 +1,9 @@
+# CODEOWNERS assignments remain unset until actual GitHub owners are supplied.
+# Retained scope examples; replace OWNER and uncomment only for a real owner.
+# *                         @OWNER
+# AGENTS.md                 @OWNER
+# .codex/config.toml        @OWNER
+# .codex/hooks.json         @OWNER
+# .agents/skills/           @OWNER
+# .codex/agents/            @OWNER
+# .codex/hooks/             @OWNER

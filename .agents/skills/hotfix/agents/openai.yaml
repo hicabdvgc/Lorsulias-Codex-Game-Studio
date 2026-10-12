@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hotfix"
+  short_description: "Prepare and verify a scoped emergency fix"
+  default_prompt: "Use $hotfix for the selected project scope and report actual outputs and missing evidence."

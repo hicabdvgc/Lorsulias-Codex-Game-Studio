@@ -1,0 +1,5 @@
+interface:
+  display_name: Create Stories
+  short_description: Create stories with traceable scope and evidence
+  default_prompt: Use $create-stories for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

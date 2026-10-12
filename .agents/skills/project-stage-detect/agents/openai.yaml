@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Stage Detect"
+  short_description: "Observe workflow position and missing outcome evidence"
+  default_prompt: "Use $project-stage-detect for the selected scope and report actual outcomes and remaining evidence."

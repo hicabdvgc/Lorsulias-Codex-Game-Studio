@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Combat"
+  short_description: "Coordinate scoped combat work and evaluation"
+  default_prompt: "Use $team-combat for the selected scope and report actual outcomes and remaining evidence."

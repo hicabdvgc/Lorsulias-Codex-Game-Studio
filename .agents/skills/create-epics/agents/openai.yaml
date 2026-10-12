@@ -1,0 +1,5 @@
+interface:
+  display_name: Create Epics
+  short_description: Create epics with traceable scope and evidence
+  default_prompt: Use $create-epics for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

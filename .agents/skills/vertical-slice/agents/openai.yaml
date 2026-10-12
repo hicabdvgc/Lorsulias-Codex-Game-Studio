@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vertical Slice"
+  short_description: "Build and evaluate an integrated playable slice"
+  default_prompt: "Use $vertical-slice for the selected scope and report actual outcomes and remaining evidence."

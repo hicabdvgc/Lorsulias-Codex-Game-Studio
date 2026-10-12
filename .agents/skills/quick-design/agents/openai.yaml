@@ -1,0 +1,5 @@
+interface:
+  display_name: "Quick Design"
+  short_description: "Specify framework-permitted small design changes"
+  default_prompt: "Use $quick-design for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

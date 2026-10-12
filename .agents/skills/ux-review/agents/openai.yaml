@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ux Review"
+  short_description: "Review UX requirements and available evaluation evidence"
+  default_prompt: "Use $ux-review for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

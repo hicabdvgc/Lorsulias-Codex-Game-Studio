@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Release"
+  short_description: "Coordinate candidate assessment and delivery"
+  default_prompt: "Use $team-release for the selected project scope and report actual outputs and missing evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Run bounded experiments and report actual evidence"
+  default_prompt: "Use $prototype for the requested scoped task and report its actual outcome."

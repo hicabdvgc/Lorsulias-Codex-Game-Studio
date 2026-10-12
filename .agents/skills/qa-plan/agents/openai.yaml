@@ -1,0 +1,5 @@
+interface:
+  display_name: Qa Plan
+  short_description: Map scoped criteria to feasible evaluation methods
+  default_prompt: Use $qa-plan for the requested scope, preserving existing authorization and reporting actual
+    evidence and missing inputs.

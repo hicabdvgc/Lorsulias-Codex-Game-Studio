@@ -1,0 +1,5 @@
+interface:
+  display_name: "Team Level"
+  short_description: "Coordinate level design and evaluation planning"
+  default_prompt: "Use $team-level for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

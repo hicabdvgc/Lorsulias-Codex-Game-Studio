@@ -1,0 +1,1052 @@
+version: 3
+last_updated: '2026-10-08'
+notes: All installed skills and personas have registered specifications. Null spec in an
+  incomplete fixture denotes missing coverage, never a pass. last_* fields are scoped
+  evaluation records. Reusable executable checks are documented in runtime/README.md.
+skills:
+- name: skill-test
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/skill-test.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: skill-improve
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/skill-improve.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: estimate
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/estimate.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: tech-debt
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/tech-debt.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: bug-triage
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/bug-triage.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: retrospective
+  category: sprint
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/sprint/retrospective.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: changelog
+  category: sprint
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/sprint/changelog.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: patch-notes
+  category: sprint
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/sprint/patch-notes.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: brainstorm
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/brainstorm.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: setup-engine
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/setup-engine.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: prototype
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/prototype.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: reverse-document
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/reverse-document.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: map-systems
+  category: pipeline
+  priority: high
+  spec: CGS Skill Testing Framework/skills/pipeline/map-systems.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: create-control-manifest
+  category: pipeline
+  priority: high
+  spec: CGS Skill Testing Framework/skills/pipeline/create-control-manifest.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: design-system
+  category: authoring
+  priority: high
+  spec: CGS Skill Testing Framework/skills/authoring/design-system.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: create-architecture
+  category: authoring
+  priority: high
+  spec: CGS Skill Testing Framework/skills/authoring/create-architecture.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: architecture-decision
+  category: authoring
+  priority: high
+  spec: CGS Skill Testing Framework/skills/authoring/architecture-decision.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: design-review
+  category: review
+  priority: high
+  spec: CGS Skill Testing Framework/skills/review/design-review.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: architecture-review
+  category: review
+  priority: high
+  spec: CGS Skill Testing Framework/skills/review/architecture-review.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: art-bible
+  category: authoring
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/authoring/art-bible.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: ux-design
+  category: authoring
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/authoring/ux-design.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: ux-review
+  category: authoring
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/authoring/ux-review.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: quick-design
+  category: authoring
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/authoring/quick-design.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: asset-audit
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/asset-audit.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: content-audit
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/content-audit.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: consistency-check
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/consistency-check.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: balance-check
+  category: analysis
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/analysis/balance-check.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: asset-spec
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/asset-spec.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: localize
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/localize.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: team-narrative
+  category: team
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/team/team-narrative.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: team-level
+  category: team
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/team/team-level.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: team-audio
+  category: team
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/team/team-audio.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: review-all-gdds
+  category: review
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/review/review-all-gdds.md
+  last_spec: ''
+  last_spec_result: ''
+  last_static: ''
+  last_static_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: create-epics
+  category: pipeline
+  priority: high
+  spec: CGS Skill Testing Framework/skills/pipeline/create-epics.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: create-stories
+  category: pipeline
+  priority: high
+  spec: CGS Skill Testing Framework/skills/pipeline/create-stories.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: story-readiness
+  category: readiness
+  priority: high
+  spec: CGS Skill Testing Framework/skills/readiness/story-readiness.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: sprint-plan
+  category: sprint
+  priority: high
+  spec: CGS Skill Testing Framework/skills/sprint/sprint-plan.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: scope-check
+  category: analysis
+  priority: high
+  spec: CGS Skill Testing Framework/skills/analysis/scope-check.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: test-setup
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/test-setup.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: test-helpers
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/test-helpers.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: qa-plan
+  category: utility
+  priority: high
+  spec: CGS Skill Testing Framework/skills/utility/qa-plan.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: define-milestones
+  category: authoring
+  priority: high
+  spec: CGS Skill Testing Framework/skills/authoring/define-milestones.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: dev-story
+  spec: CGS Skill Testing Framework/skills/pipeline/dev-story.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: high
+  category: pipeline
+- name: vertical-slice
+  spec: CGS Skill Testing Framework/skills/pipeline/vertical-slice.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: high
+  category: pipeline
+- name: propagate-design-change
+  spec: CGS Skill Testing Framework/skills/pipeline/propagate-design-change.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: high
+  category: pipeline
+- name: integrate-worktrees
+  spec: CGS Skill Testing Framework/skills/pipeline/integrate-worktrees.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: high
+  category: pipeline
+- name: story-done
+  spec: CGS Skill Testing Framework/skills/readiness/story-done.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: critical
+  category: readiness
+- name: test-evidence-review
+  spec: CGS Skill Testing Framework/skills/analysis/test-evidence-review.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: analysis
+- name: code-review
+  spec: CGS Skill Testing Framework/skills/analysis/code-review.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: analysis
+- name: security-audit
+  spec: CGS Skill Testing Framework/skills/analysis/security-audit.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: analysis
+- name: perf-profile
+  spec: CGS Skill Testing Framework/skills/analysis/perf-profile.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: analysis
+- name: test-flakiness
+  spec: CGS Skill Testing Framework/skills/analysis/test-flakiness.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: analysis
+- name: smoke-check
+  spec: CGS Skill Testing Framework/skills/utility/smoke-check.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: regression-suite
+  spec: CGS Skill Testing Framework/skills/utility/regression-suite.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: soak-test
+  spec: CGS Skill Testing Framework/skills/utility/soak-test.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: bug-report
+  spec: CGS Skill Testing Framework/skills/utility/bug-report.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: playtest-report
+  spec: CGS Skill Testing Framework/skills/utility/playtest-report.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: project-stage-detect
+  spec: CGS Skill Testing Framework/skills/utility/project-stage-detect.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: utility
+- name: gate-check
+  spec: CGS Skill Testing Framework/skills/gate/gate-check.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: critical
+  category: gate
+- name: sprint-status
+  spec: CGS Skill Testing Framework/skills/sprint/sprint-status.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: medium
+  category: sprint
+- name: milestone-review
+  spec: CGS Skill Testing Framework/skills/sprint/milestone-review.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: low
+  category: sprint
+- name: team-combat
+  spec: CGS Skill Testing Framework/skills/team/team-combat.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: medium
+  category: team
+- name: team-ui
+  spec: CGS Skill Testing Framework/skills/team/team-ui.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: medium
+  category: team
+- name: team-qa
+  spec: CGS Skill Testing Framework/skills/team/team-qa.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: medium
+  category: team
+- name: team-polish
+  spec: CGS Skill Testing Framework/skills/team/team-polish.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+  priority: medium
+  category: team
+- name: start
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/start.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: help
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/help.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: adopt
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/adopt.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: onboard
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/onboard.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: studio-status
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/studio-status.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: release-checklist
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/release-checklist.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: launch-checklist
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/launch-checklist.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: hotfix
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/hotfix.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: day-one-patch
+  category: utility
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/utility/day-one-patch.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: team-release
+  category: team
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/team/team-release.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: team-live-ops
+  category: team
+  priority: medium
+  spec: CGS Skill Testing Framework/skills/team/team-live-ops.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+agents:
+- name: producer
+  category: director
+  priority: high
+  spec: CGS Skill Testing Framework/agents/directors/producer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: creative-director
+  category: director
+  priority: high
+  spec: CGS Skill Testing Framework/agents/directors/creative-director.md
+  last_spec: ''
+  last_spec_result: ''
+- name: technical-director
+  category: director
+  priority: high
+  spec: CGS Skill Testing Framework/agents/directors/technical-director.md
+  last_spec: ''
+  last_spec_result: ''
+- name: game-designer
+  category: lead
+  priority: high
+  spec: CGS Skill Testing Framework/agents/leads/game-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: systems-designer
+  category: lead
+  priority: high
+  spec: CGS Skill Testing Framework/agents/leads/systems-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: lead-programmer
+  category: lead
+  priority: high
+  spec: CGS Skill Testing Framework/agents/leads/lead-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: accessibility-specialist
+  category: qa
+  priority: high
+  spec: CGS Skill Testing Framework/agents/qa/accessibility-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: prototyper
+  category: specialist
+  priority: high
+  spec: CGS Skill Testing Framework/agents/specialists/prototyper.md
+  last_spec: ''
+  last_spec_result: ''
+- name: godot-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/godot/godot-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: godot-gdscript-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/godot/godot-gdscript-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: godot-csharp-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/godot/godot-csharp-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: godot-gdextension-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/godot/godot-gdextension-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: godot-shader-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/godot/godot-shader-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unity-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unity/unity-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unity-addressables-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unity/unity-addressables-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unity-dots-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unity/unity-dots-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unity-shader-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unity/unity-shader-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unity-ui-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unity/unity-ui-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: unreal-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unreal/unreal-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: ue-blueprint-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unreal/ue-blueprint-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: ue-gas-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unreal/ue-gas-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: ue-replication-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unreal/ue-replication-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: ue-umg-specialist
+  category: engine
+  priority: high
+  spec: CGS Skill Testing Framework/agents/engine/unreal/ue-umg-specialist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: art-director
+  category: directors
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/directors/art-director.md
+  last_spec: ''
+  last_spec_result: ''
+- name: audio-director
+  category: leads
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/leads/audio-director.md
+  last_spec: ''
+  last_spec_result: ''
+- name: level-designer
+  category: leads
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/leads/level-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: narrative-director
+  category: leads
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/leads/narrative-director.md
+  last_spec: ''
+  last_spec_result: ''
+- name: economy-designer
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/economy-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: localization-lead
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/localization-lead.md
+  last_spec: ''
+  last_spec_result: ''
+- name: technical-artist
+  category: specialists
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/specialists/technical-artist.md
+  last_spec: ''
+  last_spec_result: ''
+- name: sound-designer
+  category: specialists
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/specialists/sound-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: ux-designer
+  category: specialists
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/specialists/ux-designer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: world-builder
+  category: specialists
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/specialists/world-builder.md
+  last_spec: ''
+  last_spec_result: ''
+- name: writer
+  category: specialists
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/specialists/writer.md
+  last_spec: ''
+  last_spec_result: ''
+- name: qa-lead
+  category: leads
+  priority: high
+  spec: CGS Skill Testing Framework/agents/leads/qa-lead.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: tools-programmer
+  category: specialists
+  priority: high
+  spec: CGS Skill Testing Framework/agents/specialists/tools-programmer.md
+  last_static: ''
+  last_static_result: ''
+  last_spec: ''
+  last_spec_result: ''
+  last_category: ''
+  last_category_result: ''
+- name: gameplay-programmer
+  spec: CGS Skill Testing Framework/agents/specialists/gameplay-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: engine-programmer
+  spec: CGS Skill Testing Framework/agents/specialists/engine-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: ai-programmer
+  spec: CGS Skill Testing Framework/agents/specialists/ai-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: network-programmer
+  spec: CGS Skill Testing Framework/agents/specialists/network-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: ui-programmer
+  spec: CGS Skill Testing Framework/agents/specialists/ui-programmer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: performance-analyst
+  spec: CGS Skill Testing Framework/agents/specialists/performance-analyst.md
+  last_spec: ''
+  last_spec_result: ''
+  category: specialist
+- name: qa-tester
+  spec: CGS Skill Testing Framework/agents/qa/qa-tester.md
+  last_spec: ''
+  last_spec_result: ''
+  category: qa
+- name: security-engineer
+  spec: CGS Skill Testing Framework/agents/qa/security-engineer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: qa
+- name: devops-engineer
+  spec: CGS Skill Testing Framework/agents/operations/devops-engineer.md
+  last_spec: ''
+  last_spec_result: ''
+  category: operations
+- name: release-manager
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/release-manager.md
+- name: community-manager
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/community-manager.md
+- name: analytics-engineer
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/analytics-engineer.md
+- name: live-ops-designer
+  category: operations
+  priority: medium
+  spec: CGS Skill Testing Framework/agents/operations/live-ops-designer.md

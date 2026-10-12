@@ -1,0 +1,4 @@
+interface:
+  display_name: "Changelog"
+  short_description: "Draft changes from verified Git and work evidence"
+  default_prompt: "Use $changelog for the selected project scope and report actual outputs and missing evidence."

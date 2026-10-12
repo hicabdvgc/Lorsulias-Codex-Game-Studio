@@ -1,0 +1,4 @@
+interface:
+  display_name: "Studio Status"
+  short_description: "Inspect declared section and recovery focus"
+  default_prompt: "Use $studio-status for the selected project scope and report actual outputs and missing evidence."

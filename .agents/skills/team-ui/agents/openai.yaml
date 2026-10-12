@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team UI"
+  short_description: "Coordinate interface design, build and evaluation"
+  default_prompt: "Use $team-ui for the selected scope and report actual outcomes and remaining evidence."

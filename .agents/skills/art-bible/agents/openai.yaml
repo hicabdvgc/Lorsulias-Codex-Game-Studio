@@ -1,0 +1,5 @@
+interface:
+  display_name: "Art Bible"
+  short_description: "Author scoped visual direction and asset standards"
+  default_prompt: "Use $art-bible for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

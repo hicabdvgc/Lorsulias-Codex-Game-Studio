@@ -1,0 +1,5 @@
+interface:
+  display_name: Sprint Plan
+  short_description: Sprint plan with traceable scope and evidence
+  default_prompt: Use $sprint-plan for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

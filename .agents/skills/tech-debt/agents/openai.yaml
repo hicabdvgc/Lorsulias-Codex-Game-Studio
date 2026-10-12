@@ -1,0 +1,5 @@
+interface:
+  display_name: Tech Debt
+  short_description: Tech debt with traceable scope and evidence
+  default_prompt: Use $tech-debt for the requested scope, preserving existing authorization and reporting actual
+    evidence and missing inputs.

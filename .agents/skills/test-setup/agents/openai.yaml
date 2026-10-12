@@ -1,0 +1,5 @@
+interface:
+  display_name: Test Setup
+  short_description: Prepare selected runner infrastructure without overwrites
+  default_prompt: Use $test-setup for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

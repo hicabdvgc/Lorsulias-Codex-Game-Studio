@@ -1,0 +1,5 @@
+interface:
+  display_name: "Team Audio"
+  short_description: "Coordinate scoped audio design and integration"
+  default_prompt: "Use $team-audio for the requested scope, applying the project\
+    \ contracts and reporting actual evidence."

@@ -1,0 +1,5 @@
+interface:
+  display_name: Retrospective
+  short_description: Retrospective with traceable scope and evidence
+  default_prompt: Use $retrospective for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.

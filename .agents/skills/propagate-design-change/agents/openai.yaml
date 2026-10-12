@@ -1,0 +1,4 @@
+interface:
+  display_name: "Propagate Design Change"
+  short_description: "Trace design changes across dependent work"
+  default_prompt: "Use $propagate-design-change for the selected scope and report actual outcomes and remaining evidence."

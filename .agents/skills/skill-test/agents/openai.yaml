@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Test"
+  short_description: "Evaluate studio skill contracts and coverage"
+  default_prompt: "Use $skill-test to evaluate a studio skill and report findings."

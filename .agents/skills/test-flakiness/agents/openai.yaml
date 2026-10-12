@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Flakiness"
+  short_description: "Analyze intermittent results from comparable test runs"
+  default_prompt: "Use $test-flakiness for the selected scope and report actual outcomes and remaining evidence."

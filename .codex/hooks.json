@@ -1,0 +1,135 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/validate-command-safety.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/validate-command-safety.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Checking the selected project command patterns"
+          },
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/validate-commit.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/validate-commit.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Observing staged content"
+          },
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/validate-push.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/validate-push.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Observing push context"
+          }
+        ],
+        "matcher": "^Bash$"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/validate-skill-change.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/validate-skill-change.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Checking whether studio skills changed"
+          },
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/validate-assets.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/validate-assets.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Checking changed resource JSON syntax"
+          }
+        ],
+        "matcher": "^apply_patch$"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/log-agent.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/log-agent.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Recording an agent start event"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/log-agent-stop.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/log-agent-stop.sh'); exit $LASTEXITCODE\"",
+            "timeout": 10,
+            "statusMessage": "Recording an agent stop event"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/session-start.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/session-start.sh'); exit $LASTEXITCODE\"",
+            "timeout": 15,
+            "statusMessage": "Observing SessionStart recovery state",
+            "additionalContextLimit": 12000
+          }
+        ],
+        "matcher": "^(startup|resume|clear|compact)$"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/session-stop.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/session-stop.sh'); exit $LASTEXITCODE\"",
+            "timeout": 15,
+            "statusMessage": "Observing Stop recovery state"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/pre-compact.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/pre-compact.sh'); exit $LASTEXITCODE\"",
+            "timeout": 15,
+            "statusMessage": "Observing PreCompact recovery state"
+          }
+        ],
+        "matcher": "^(auto|manual)$"
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=\"$PWD\"; while [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ] && [ \"$p\" != \"/\" ]; do p=$(dirname \"$p\"); done; if [ ! -f \"$p/.codex/hooks/hook-lib.sh\" ]; then echo \"Lorsulia hook root unavailable\" >&2; exit 1; fi; bash \"$p/.codex/hooks/post-compact.sh\"",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -Command \"$r = (Get-Location).Path; while ($r -and -not (Test-Path -LiteralPath (Join-Path $r '.codex/hooks/hook-lib.sh'))) { $r = Split-Path $r -Parent }; if (-not $r) { throw 'Lorsulia hook root unavailable' }; $g = (Get-Command git.exe -ErrorAction Stop).Source; $b = Join-Path (Split-Path (Split-Path $g -Parent) -Parent) 'bin/bash.exe'; if (-not (Test-Path -LiteralPath $b)) { throw 'Git Bash unavailable; check setup-requirements.md' }; & $b (Join-Path $r '.codex/hooks/post-compact.sh'); exit $LASTEXITCODE\"",
+            "timeout": 15,
+            "statusMessage": "Observing PostCompact recovery state"
+          }
+        ],
+        "matcher": "^(auto|manual)$"
+      }
+    ]
+  }
+}

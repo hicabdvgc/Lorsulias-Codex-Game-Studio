@@ -1,0 +1,5 @@
+interface:
+  display_name: Test Helpers
+  short_description: Build helpers from actual production interfaces
+  default_prompt: Use $test-helpers for the requested scope, preserving existing authorization and reporting
+    actual evidence and missing inputs.
